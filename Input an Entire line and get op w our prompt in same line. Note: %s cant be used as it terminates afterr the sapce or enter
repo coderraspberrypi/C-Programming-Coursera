@@ -1,0 +1,57 @@
+File Copying
+
+Given getchar and putchar, you can write a surprising amount of useful code without knowing anything more about I/O. The simplest example is a program which copies its input to its output one character at a time. In outline,
+
+get a character
+while (character is not end file signal)
+    output the character just read
+    get a new character
+
+Converting this into C gives
+
+c_014_01
+#include <stdio.h>
+
+main() /* copy input to output; 1st version */
+{
+    int c;
+    c = getchar();
+
+    while (c != EOF) {
+        putchar(c);
+        c = getchar();
+    }
+}
+
+
+
+
+
+//related question
+Exercise RS-4: Write a C program equivalent to this Python program:
+
+print('Enter line')
+line = input()
+print('Line:', line)
+
+
+//c code but I have used FGETS() function here instead of above mentioned get and putchar. 
+//strcspn returns the length of the string till the specified punctuation mark or special character "\n" in this case
+
+
+#include <stdio.h>
+
+int main() {
+    char input[100];
+
+    printf("Enter line\n");
+    fgets(input, sizeof(input), stdin);
+
+    // Remove newline character if present
+    input[strcspn(input, "\n")] = '\0';
+
+    printf("Line: %s\n", input);
+
+    return 0;
+}
+
