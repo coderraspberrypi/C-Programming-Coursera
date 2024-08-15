@@ -1,0 +1,21 @@
+Write a C program equivalent to this Python program:
+
+print('Enter name')
+name = input()
+print('Hello', name)
+
+
+//c code
+#include<stdio.h>
+
+int main(){
+  printf("Enter name\n");
+  
+  char name[5];
+  
+  scanf("%5s", name);
+  
+  printf("Hello %s", name);
+  
+  return 0;
+}	
