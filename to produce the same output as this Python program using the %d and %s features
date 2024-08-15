@@ -1,0 +1,32 @@
+Exercise RS-1: Write a C program to produce the same output as this Python program using the %d and %s features of the printf() function:
+
+print('Hello world')
+print('Answer', 18)
+print('Name', 'Sarah')
+
+
+
+//answer
+#include <stdio.h>
+int main() {
+  
+  
+    printf("Hello world\n");
+  
+  	int num =18;
+  	printf("Answer %d\n",num);
+  	
+  	char name[20]="Sarah";
+  	scanf("%s", name);
+  	printf("Name %s\n", name);
+  return 0;
+  		
+}
+
+
+
+Output from your program:
+
+Hello world
+Answer 18
+Name Sarah
